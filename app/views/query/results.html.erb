@@ -1,1 +1,5 @@
-<%= @results %>
+<ul>
+<% @results.each do |movie| %>
+<li><%=  strip_tags(movie).html_safe %></li>
+<% end %>
+</ul>
