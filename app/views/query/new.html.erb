@@ -1,6 +1,20 @@
+This app is designed specifically for Scott C. Reynolds.<br><br>
+If you are not Scott C. Reynolds, feel free to enjoy anyway.<br>
+
+Instructions:<br>
+<ol>
+<li>Enter an actor or actress into the first box.</li>
+<li>Enter an actor or actress into the second box.</li>
+<li>Click the button.</li>
+<li>See all the movies they were in together.</li>
+</ol>
+
+
 <%= form_tag("/results", method: "get") do %>
- <%= label_tag(:actor_1, "Search for:") %>
- <%= text_field_tag(:actor_1) %>
- <%= text_field_tag(:actor_2) %>
- <%= submit_tag("Search") %>
+ <%= label_tag(:actor_1, "Actor/Actress #1") %>
+ <%= text_field_tag(:actor_1) %><br>
+ <%= label_tag(:actor_2, "Actor/Actress #2") %>
+ <%= text_field_tag(:actor_2) %><br><br>
+ <em>Whatcha gonna do Jerry?<br><br>
+ <%= submit_tag("Show me the movies") %>
 <% end %>

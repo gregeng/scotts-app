@@ -1,5 +1,12 @@
-<ul>
-<% @results.each do |movie| %>
-<li><%=  strip_tags(movie).html_safe %></li>
+<% if !@results.empty? %>
+  <ul>
+  <% @results.each do |movie| %>
+  <li><%=  strip_tags(movie).html_safe %></li>
+  <% end %>
+  </ul>
+<% else %>
+  <h3> Those two people were never in the same movie together.</h3>
 <% end %>
-</ul>
+
+
+<%= link_to "Another Pair?", root_path %>
