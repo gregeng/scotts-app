@@ -1,0 +1,6 @@
+<%= form_tag("/results", method: "get") do %>
+ <%= label_tag(:q, "Search for:") %>
+ <%= text_field_tag(:actor_1) %>
+ <%= text_field_tag(:actor_2) %>
+ <%= submit_tag("Search") %>
+<% end %>

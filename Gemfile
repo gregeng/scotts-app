@@ -44,6 +44,10 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'json'
+gem 'httparty'
+gem 'addressable'
+
 group :test, :development do
   gem 'dotenv-rails'
   gem "rspec-rails"
