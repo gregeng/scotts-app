@@ -16,6 +16,20 @@ FREEBASE_URL = Addressable::URI.parse('https://www.googleapis.com/freebase/v1/mq
     movies.flatten
   end
 
+  def self.common_tv_shows(actor_1="Alec Baldwin",actor_2="Tina Fey")
+    query =
+      [{
+        "a:regular_cast"=> [{"actor"=> actor_1 }],
+        "b:regular_cast"=> [{"actor"=> actor_2 }],
+        "name"=> [],
+        "type"=> "/tv/tv_program"
+      }]
+
+    response = freebase_magic(query)
+    shows = response['result'].collect { |show| show['name'] }
+    shows.flatten
+  end
+
   def self.freebase_magic(query)
     FREEBASE_URL.query_values = {
         'query' => query.to_json,
